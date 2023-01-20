@@ -55,7 +55,7 @@ def predict_note_authentication(WinterRain, AGST, HarvestRain, Age, FrancePop):
     
     return round(float(prediction),3), report_data
     
-
+st.write(report_data)
 
 
 def main():
@@ -79,7 +79,7 @@ def main():
     result=""
     if st.button("Predict"):
         result=predict_note_authentication(WinterRain, AGST, HarvestRain, Age, FrancePop)
-        st.write(report_data)
+
     st.success('Wine price for given input set is   : ${}'.format(result))
     #st.success('The output is -->  {}'(result))
     if st.button("About"):
