@@ -39,7 +39,22 @@ def predict_note_authentication(WinterRain, AGST, HarvestRain, Age, FrancePop):
     prediction=wine.predict(input)
     #prediction=wine.predict([[WinterRain, AGST, HarvestRain, Age, FrancePop]])
     print("Wine Price prediction:")
-    return round(float(prediction),3)
+    
+    user_report_data = {
+      'WinterRain':WinterRain,
+      'AGST':AGST,
+      'HarvestRain':HarvestRain,
+      'Age':Age,
+      'FrancePop':FrancePop,
+      'Color':Color,
+
+    }
+    report_data = pd.DataFrame(user_report_data, index=[0])
+
+    
+    
+    
+    return round(float(prediction),3), report_data
     
 
 
@@ -57,9 +72,15 @@ def main():
     HarvestRain = st.text_input("HarvestRain","Type Here")
     Age = st.text_input("Age","Type Here")
     FrancePop = st.text_input("FrancePop","Type Here")
+    
+    
+    
+    
+    
     result=""
     if st.button("Predict"):
         result=predict_note_authentication(WinterRain, AGST, HarvestRain, Age, FrancePop)
+        st.write(report_data)
     st.success('Wine price for given input set is   : ${}'.format(result))
     #st.success('The output is -->  {}'(result))
     if st.button("About"):
