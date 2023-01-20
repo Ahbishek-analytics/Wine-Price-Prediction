@@ -46,7 +46,6 @@ def predict_note_authentication(WinterRain, AGST, HarvestRain, Age, FrancePop):
       'HarvestRain':HarvestRain,
       'Age':Age,
       'FrancePop':FrancePop,
-      'Color':Color,
 
     }
     report_data = pd.DataFrame(user_report_data, index=[0])
