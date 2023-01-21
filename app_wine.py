@@ -88,8 +88,8 @@ def main():
         st.write(df)  # visualize my dataframe in the Streamlit app
         
         fig = px.scatter(        
-        x="WinterRain",
-        y="Price",
+        x=df.WinterRain,
+        y=df.Price,
         #size="pop",
         color="continent",
         #hover_name="country",
