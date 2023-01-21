@@ -49,6 +49,11 @@ def predict_note_authentication(WinterRain, AGST, HarvestRain, Age, FrancePop):
     print("Wine Price prediction:")
     
    
+
+    
+    return round(float(prediction),2), report_data
+ 
+def user_report(WinterRain, AGST, HarvestRain, Age, FrancePop):
     user_report_data = {
       'WinterRain':WinterRain,
       'AGST':AGST,
@@ -57,8 +62,7 @@ def predict_note_authentication(WinterRain, AGST, HarvestRain, Age, FrancePop):
       'FrancePop':FrancePop,
     }
     report_data = pd.DataFrame(user_report_data, index=[0])
-    
-    return round(float(prediction),2), report_data
+return report_data
     
 user_data = user_report()
 st.header('Player Data')
@@ -87,7 +91,8 @@ def main():
     result=""
     if st.button("Predict"):
         result=predict_note_authentication(WinterRain, AGST, HarvestRain, Age, FrancePop)
-
+    if st.button("report_data"):
+        data=user_report(WinterRain, AGST, HarvestRain, Age, FrancePop)
     st.success('Wine price for given input set is   : ${}'.format(result))
     #st.success('The output is -->  {}'(result))
     
