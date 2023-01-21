@@ -45,7 +45,6 @@ def predict_note_authentication(WinterRain, AGST, HarvestRain, Age, FrancePop):
     
     return round(float(prediction),2)
     
-st.write(report_data)
 
 
 def main():
