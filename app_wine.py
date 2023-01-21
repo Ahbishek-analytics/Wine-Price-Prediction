@@ -40,20 +40,10 @@ def predict_note_authentication(WinterRain, AGST, HarvestRain, Age, FrancePop):
     #prediction=wine.predict([[WinterRain, AGST, HarvestRain, Age, FrancePop]])
     print("Wine Price prediction:")
     
-    user_report_data = {
-      'WinterRain':WinterRain,
-      'AGST':AGST,
-      'HarvestRain':HarvestRain,
-      'Age':Age,
-      'FrancePop':FrancePop,
-
-    }
-    report_data = pd.DataFrame(user_report_data, index=[0])
-
+   
     
     
-    
-    return round(float(prediction),3), report_data
+    return round(float(prediction),2)
     
 st.write(report_data)
 
