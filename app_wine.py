@@ -27,6 +27,17 @@ from PIL import Image
 pickle_in = open("wine.pkl","rb")
 wine=pickle.load(pickle_in)
 
+
+df = pd.read_csv(".wine.csv")  # read a CSV file inside the 'data" folder next to 'app.py'
+# df = pd.read_excel(...)  # will work for Excel files
+
+st.title("Hello world!")  # add a title
+st.write(df)  # visualize my dataframe in the Streamlit app
+
+
+
+
+
 #@app.route('/')
 def welcome():
     return "Welcome All"
