@@ -51,7 +51,7 @@ def predict_note_authentication(WinterRain, AGST, HarvestRain, Age, FrancePop):
    
 
     
-    return round(float(prediction),2), report_data
+    return round(float(prediction),2)
  
 def user_report(WinterRain, AGST, HarvestRain, Age, FrancePop):
     user_report_data = {
