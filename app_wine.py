@@ -60,9 +60,9 @@ def predict_note_authentication(WinterRain, AGST, HarvestRain, Age, FrancePop):
     
     return round(float(prediction),2), report_data
     
-    user_data = user_report()
-    st.header('Player Data')
-    st.write(user_data)
+user_data = user_report()
+st.header('Player Data')
+st.write(user_data)
     
 
 
