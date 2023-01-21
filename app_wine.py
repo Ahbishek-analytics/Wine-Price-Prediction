@@ -62,7 +62,7 @@ def user_report(WinterRain, AGST, HarvestRain, Age, FrancePop):
       'FrancePop':FrancePop,
     }
     report_data = pd.DataFrame(user_report_data, index=[0])
-return report_data
+    return report_data
     
 user_data = user_report()
 st.header('Player Data')
