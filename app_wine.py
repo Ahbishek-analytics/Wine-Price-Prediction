@@ -91,10 +91,10 @@ def main():
         x="WinterRain",
         y="Price",
         #size="pop",
-        color="continent",
+        #color="continent",
         #hover_name="country",
         #log_x=True,
-        size_max=60,
+        #size_max=60,
         )
     
     
