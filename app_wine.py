@@ -64,9 +64,7 @@ def user_report(WinterRain, AGST, HarvestRain, Age, FrancePop):
     report_data = pd.DataFrame(user_report_data, index=[0])
     return report_data
     
-user_data = user_report()
-st.header('Player Data')
-st.write(user_data)
+
     
 
 
@@ -91,14 +89,19 @@ def main():
     result=""
     if st.button("Predict"):
         result=predict_note_authentication(WinterRain, AGST, HarvestRain, Age, FrancePop)
-    if st.button("report_data"):
-        data=user_report(WinterRain, AGST, HarvestRain, Age, FrancePop)
+
     st.success('Wine price for given input set is   : ${}'.format(result))
     #st.success('The output is -->  {}'(result))
     
     df = pd.read_csv("./wine.csv")  # read a CSV file inside the 'data" folder next to 'app.py'
     # df = pd.read_excel(...)  # will work for Excel files
-
+    if st.button("report_data"):
+        user_data=user_report(WinterRain, AGST, HarvestRain, Age, FrancePop)
+        #user_data = user_report()
+        st.header('Player Data')
+        st.write(user_data)
+        
+        
     if st.button("Show data"):
         st.title("Hello world!")  # add a title
         st.write(df)  # visualize my dataframe in the Streamlit app
