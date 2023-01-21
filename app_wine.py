@@ -18,6 +18,7 @@ import pickle
 import pandas as pd
 #from flasgger import Swagger
 import streamlit as st 
+import plotly.express as px
 
 from PIL import Image
 
@@ -85,6 +86,16 @@ def main():
     if st.button("Show data"):
         st.title("Hello world!")  # add a title
         st.write(df)  # visualize my dataframe in the Streamlit app
+        
+        fig = px.scatter(        
+        x="WinterRain",
+        y="Price",
+        #size="pop",
+        color="continent",
+        #hover_name="country",
+        #log_x=True,
+        size_max=60,
+        )
     
     
     if st.button("About"):
