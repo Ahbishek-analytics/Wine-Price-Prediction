@@ -87,9 +87,9 @@ def main():
         st.title("Hello world!")  # add a title
         st.write(df)  # visualize my dataframe in the Streamlit app
         
-        fig = px.scatter(        
-        x=df.WinterRain,
-        y=df.Price,
+        fig = px.scatter(df,        
+        x="WinterRain",
+        y="Price",
         #size="pop",
         color="continent",
         #hover_name="country",
