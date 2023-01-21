@@ -86,7 +86,8 @@ def main():
     if st.button("Show data"):
         st.title("Hello world!")  # add a title
         st.write(df)  # visualize my dataframe in the Streamlit app
-        
+     
+    if st.button("Show graphs"):   
         fig = px.scatter(df,        
         x="WinterRain",
         y="Price",
@@ -96,7 +97,7 @@ def main():
         #log_x=True,
         #size_max=60,
         )
-    
+        st.plotly_chart(fig, theme="streamlit", use_container_width=True)
     
     if st.button("About"):
         st.text("Lets LEarn")
